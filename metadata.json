@@ -1,0 +1,7 @@
+{
+  "name": "Pneuma Nikos Group Ltd version 1",
+  "description": "Professional external labor recruitment agency based in Kampala, Uganda, connecting talent with international opportunities in Saudi Arabia, Canada, Dubai, and Qatar.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

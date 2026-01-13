@@ -5,6 +5,7 @@ import { View, Job } from '../types';
 import { Globe, Shield, Users, ArrowRight, Briefcase, Star, Quote, CheckCircle, Award, Clock, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ProcessTimeline } from '../components/ProcessTimeline';
 import { Gallery } from '../components/Gallery';
+import { TestimonialCarousel } from '../components/TestimonialCarousel';
 
 interface HomeProps {
   setView: (view: View) => void;
@@ -13,7 +14,7 @@ interface HomeProps {
 
 const HERO_SLIDES = [
   {
-    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1920&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1920&auto=format&fit=crop',
     tag: 'FULLY LICENSED: ' + COMPANY_INFO.license,
     title: 'Your Licensed Gateway to Global Success',
     description: 'Connect with verified, high-trust job opportunities in Saudi Arabia and Dubai (UAE). Legally protected recruitment for all Ugandans.',
@@ -293,42 +294,28 @@ export const Home: React.FC<HomeProps> = ({ setView, onApply }) => {
       {/* 5.1 Trust & Credibility Section */}
       <section className="py-24 bg-white overflow-hidden border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
             <div className="lg:col-span-1">
               <h2 className="text-pneuma-purple font-bold tracking-widest uppercase text-sm mb-4">Success Stories</h2>
               <h3 className="text-4xl font-bold text-gray-900 font-serif mb-6 leading-tight">Hear from Our Candidates</h3>
-              <p className="text-gray-500 mb-8">
-                Real feedback from hardworking Ugandans who have secured their futures through Pneuma Nikos Group.
+              <p className="text-gray-500 mb-8 leading-relaxed">
+                Real feedback from hardworking Ugandans who have secured their futures through Pneuma Nikos Group. We pride ourselves on every life we've helped transform.
               </p>
-              <div className="flex gap-4 items-center">
+              <div className="flex gap-4 items-center mb-8">
                 <div className="flex -space-x-4">
                   {[1,2,3,4].map(i => (
-                    <img key={i} className="w-12 h-12 rounded-full border-4 border-white object-cover" src={`https://i.pravatar.cc/100?img=${i+10}`} alt="Candidate" />
+                    <img key={i} className="w-12 h-12 rounded-full border-4 border-white object-cover shadow-sm" src={`https://i.pravatar.cc/100?img=${i+20}`} alt="Candidate" />
                   ))}
                 </div>
                 <div className="text-sm">
-                  <p className="font-bold">4.9/5 Rating</p>
-                  <p className="text-gray-400">Based on 200+ reviews</p>
+                  <p className="font-bold text-gray-900">4.9/5 Rating</p>
+                  <p className="text-gray-400">Based on 200+ success stories</p>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
-              {TESTIMONIALS.slice(0, 2).map((t, idx) => (
-                <div key={idx} className="bg-gray-50 p-8 rounded-3xl relative">
-                  <Quote className="absolute top-4 right-4 text-pneuma-purple/10" size={60} />
-                  <p className="text-gray-700 italic mb-6 relative z-10">"{t.content}"</p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-pneuma-purple rounded-full flex items-center justify-center text-white font-bold">
-                      {t.name[0]}
-                    </div>
-                    <div>
-                      <p className="font-bold text-gray-900">{t.name}</p>
-                      <p className="text-xs text-pneuma-purple uppercase font-bold tracking-wider">{t.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div className="lg:col-span-2">
+              <TestimonialCarousel />
             </div>
           </div>
         </div>
@@ -340,8 +327,8 @@ export const Home: React.FC<HomeProps> = ({ setView, onApply }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold text-white font-serif mb-6">Start Your International Journey Today</h2>
-            <p className="text-gray-400 text-lg mb-10">
-              Licensed recruitment means safe recruitment. Don't risk your future with unverified agencies. Join the Pneuma Nikos family today.
+            <p className="text-gray-400 text-lg mb-10 leading-relaxed">
+              Licensed recruitment means safe recruitment. Don't risk your future with unverified agencies. Join the Pneuma Nikos family today and build your legacy.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <button 

@@ -135,10 +135,14 @@ export const About: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {LEADERSHIP.map((member, idx) => (
               <div key={idx} className="group flex flex-col items-center text-center">
-                <div className="relative mb-6 w-full aspect-square rounded-3xl overflow-hidden shadow-lg border-4 border-white">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-pneuma-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                    <p className="text-white text-xs font-medium italic">{member.bio}</p>
+                <div className="relative mb-6 w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-lg border-4 border-white bg-gray-100">
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-pneuma-dark/90 via-pneuma-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                    <p className="text-white text-[10px] leading-relaxed font-medium italic">{member.bio}</p>
                   </div>
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h4>

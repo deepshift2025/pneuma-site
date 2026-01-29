@@ -127,10 +127,10 @@ export const LEADERSHIP = [
     bio: 'Janet leads with compassion and over a decade of experience in HR, focusing on ethical recruitment and family-centric business values.'
   },
   {
-    name: 'Briam Tumusiime',
-    role: 'Director',
+    name: 'Brian Tumusiime',
+    role: 'Director / CEO',
     image: 'https://i.postimg.cc/sDN2y1q7/Q4A9233-jpg.jpg',
-    bio: 'Briam oversees international partnerships and strategic operations, ensuring Pneuma remains a trusted name globally.'
+    bio: 'Brian oversees international partnerships and strategic operations, ensuring Pneuma remains a trusted name globally.'
   },
   {
     name: 'Nakiwala Sanyu Stella',

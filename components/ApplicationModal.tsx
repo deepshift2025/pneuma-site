@@ -109,7 +109,8 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({ job, onClose
     </div>
   );
 
-  const FormField = ({ label, children, required = true }: { label: string, children: React.ReactNode, required?: boolean }) => (
+  // Fix: Make children optional in FormField type to resolve JSX children mapping errors
+  const FormField = ({ label, children, required = true }: { label: string, children?: React.ReactNode, required?: boolean }) => (
     <div className="space-y-1.5">
       <label className="text-[9px] font-black text-gray-500 uppercase tracking-wider block">
         {label} {required && <span className="text-red-500">*</span>}

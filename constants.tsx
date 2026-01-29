@@ -43,17 +43,16 @@ export const COUNTRY_GUIDES = [
 ];
 
 export const GALLERY_IMAGES = [
-  { url: 'https://i.postimg.cc/SRgwdnxG/images.jpg', title: 'Candidate Success Journey' },
-  { url: 'https://i.postimg.cc/gjgfsx2H/images-(1).jpg', title: 'Group Pre-Departure Briefing' },
-  { url: 'https://i.postimg.cc/ZnbG6847/images-(2).jpg', title: 'Professional Training Seminar' },
-  { url: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800', title: 'Candidate Interview Session' },
-  { url: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800', title: 'Professional Training Workshop' },
-  { url: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800', title: 'Office Orientation' },
-  { url: 'https://images.unsplash.com/photo-1517245385169-d20230b4c84a?auto=format&fit=crop&q=80&w=800', title: 'Team Collaboration' },
-  { url: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800', title: 'HR Advisory Meeting' },
-  { url: 'https://images.unsplash.com/photo-1522071823991-b99c22303091?auto=format&fit=crop&q=80&w=800', title: 'Group Departure Briefing' },
-  { url: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800', title: 'Consultation Services' },
-  { url: 'https://images.unsplash.com/photo-1454165833767-02a433983bbe?auto=format&fit=crop&q=80&w=800', title: 'Documentation Vetting' },
+  { url: 'https://i.postimg.cc/R0rV6yMx/IMG-0028-JPG.jpg', title: 'Professional Reception Area' },
+  { url: 'https://i.postimg.cc/pL5LdRM4/IMG-0029-JPG.jpg', title: 'Consultation & Registration' },
+  { url: 'https://i.postimg.cc/MTq6tBfK/IMG-0030-JPG.jpg', title: 'Verified Documentation' },
+  { url: 'https://i.postimg.cc/7LvYGdxx/IMG-0031-JPG.jpg', title: 'Candidate Briefing Session' },
+  { url: 'https://i.postimg.cc/nz2HWLq2/IMG-0032-JPG.jpg', title: 'Agency Licensing Display' },
+  { url: 'https://i.postimg.cc/Nf5gNBFq/IMG-0033-JPG.jpg', title: 'Team Collaboration' },
+  { url: 'https://i.postimg.cc/SQZS7JyH/IMG-0034-JPG.jpg', title: 'Official Recruitment Portal' },
+  { url: 'https://i.postimg.cc/VNjsjg69/IMG-0035-JPG.jpg', title: 'Pre-Departure Orientation' },
+  { url: 'https://i.postimg.cc/jdLs8t2z/IMG-0036-JPG.jpg', title: 'Success Milestones' },
+  { url: 'https://i.postimg.cc/KjY1BzHj/IMG-0064-JPG.jpg', title: 'Official Operations Office' },
 ];
 
 export const RECRUITMENT_TIPS = [
@@ -124,26 +123,32 @@ export const LEADERSHIP = [
   {
     name: 'Janet Tumusiime',
     role: 'Managing Director',
-    image: 'https://i.postimg.cc/1XvLB83c/mrs-tumusime.jpg',
+    image: 'https://i.postimg.cc/1XvLB83c/mrs_tumusime.jpg',
     bio: 'Janet leads with compassion and over a decade of experience in HR, focusing on ethical recruitment and family-centric business values.'
   },
   {
-    name: 'Brian Tumusiime',
+    name: 'Briam Tumusiime',
     role: 'Director',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&h=400&fit=crop',
-    bio: 'Brian oversees international partnerships and strategic operations, ensuring Pneuma remains a trusted name globally.'
+    image: 'https://i.postimg.cc/sDN2y1q7/Q4A9233-jpg.jpg',
+    bio: 'Briam oversees international partnerships and strategic operations, ensuring Pneuma remains a trusted name globally.'
   },
   {
-    name: 'Nakato Miriam',
-    role: 'Human Resources',
-    image: 'https://images.unsplash.com/photo-1567532939604-b6c5b0ad2eba?q=80&w=400&h=400&fit=crop',
-    bio: 'Miriam manages candidate screening and welfare, ensuring every applicant meets the rigorous standards of our global partners.'
+    name: 'Nakiwala Sanyu Stella',
+    role: 'Operations Assistant',
+    image: 'https://i.postimg.cc/wTGBH3Zb/IMG-0063-JPG.jpg',
+    bio: 'Stella ensures the smooth daily operations of our candidate processing and logistics teams.'
   },
   {
-    name: 'Janet Nantaba',
-    role: 'Customer Service',
-    image: 'https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?q=80&w=400&h=400&fit=crop',
-    bio: 'Nantaba is the primary point of contact for our candidates, providing guidance and support throughout the application process.'
+    name: 'Cate Musiime',
+    role: 'Leads Operations Analyst',
+    image: 'https://i.postimg.cc/PrRqhN94/IMG-0065-JPG.jpg',
+    bio: 'Cate specializes in data-driven recruitment analysis and streamlining the candidate pipeline.'
+  },
+  {
+    name: 'Namusu Zubeda',
+    role: 'Admin Assistant',
+    image: 'https://i.postimg.cc/XYBYv46x/IMG-0066-JPG.jpg',
+    bio: 'Zubeda provides essential administrative support, managing candidate records and office communications.'
   }
 ];
 

@@ -14,7 +14,7 @@ interface HomeProps {
 
 const HERO_SLIDES = [
   {
-    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1920&auto=format&fit=crop',
+    image: 'https://i.postimg.cc/7LvYGdxx/IMG-0031-JPG.jpg',
     tag: 'FULLY LICENSED: ' + COMPANY_INFO.license,
     title: 'Your Licensed Gateway to Global Success',
     description: 'Connect with verified, high-trust job opportunities in Saudi Arabia and Dubai (UAE). Legally protected recruitment for all Ugandans.',
@@ -22,7 +22,7 @@ const HERO_SLIDES = [
     buttonView: 'jobs' as View
   },
   {
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?q=80&w=1920&auto=format&fit=crop',
+    image: 'https://i.postimg.cc/Nf5gNBFq/IMG-0033-JPG.jpg',
     tag: 'DESTINATIONS',
     title: 'Explore Careers in the Middle East',
     description: 'Focusing exclusively on the most reliable markets in Saudi Arabia and the UAE, we bridge the gap between Ugandan talent and global employers.',
@@ -30,7 +30,7 @@ const HERO_SLIDES = [
     buttonView: 'resources' as View
   },
   {
-    image: 'https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=1920&auto=format&fit=crop',
+    image: 'https://i.postimg.cc/SQZS7JyH/IMG-0034-JPG.jpg',
     tag: 'ETHICAL PROCESS',
     title: 'Transparent & Professional Recruitment',
     description: 'We follow a strict 6-step recruitment cycle ensuring your safety, from application to travel. No hidden fees, just absolute integrity.',
@@ -38,7 +38,15 @@ const HERO_SLIDES = [
     buttonView: 'process' as View
   },
   {
-    image: 'https://images.unsplash.com/photo-1521791136064-7986c2953d75?q=80&w=1920&auto=format&fit=crop',
+    image: 'https://i.postimg.cc/KjY1BzHj/IMG-0064-JPG.jpg',
+    tag: 'OFFICIAL HEADQUARTERS',
+    title: 'Verified Recruitment Operations',
+    description: 'Our physical presence in Rubaga guarantees accountability. Visit our licensed facilities to begin your secure international career journey.',
+    buttonText: 'Locate Our Office',
+    buttonView: 'contact' as View
+  },
+  {
+    image: 'https://i.postimg.cc/VNjsjg69/IMG-0035-JPG.jpg',
     tag: 'FAMILY VALUES',
     title: 'Feeding the Universe through Empowerment',
     description: 'As a family-led agency, we treat every candidate as a partner. Join the Pneuma Nikos family and secure your financial future today.',
@@ -73,7 +81,7 @@ export const Home: React.FC<HomeProps> = ({ setView, onApply }) => {
             <img 
               src={slide.image} 
               alt={slide.title} 
-              className="w-full h-full object-cover brightness-[0.3]"
+              className="w-full h-full object-cover brightness-[0.4]"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-pneuma-dark/95 via-pneuma-dark/40 to-transparent"></div>
           </div>
@@ -94,7 +102,7 @@ export const Home: React.FC<HomeProps> = ({ setView, onApply }) => {
                 </div>
                 <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 font-serif leading-tight">
                   {slide.title.split(' ').map((word, i) => 
-                    word.toLowerCase() === 'global' || word.toLowerCase() === 'success' || word.toLowerCase() === 'empowerment' || word.toLowerCase() === 'professional' ? 
+                    word.toLowerCase() === 'global' || word.toLowerCase() === 'success' || word.toLowerCase() === 'empowerment' || word.toLowerCase() === 'professional' || word.toLowerCase() === 'verified' ? 
                     <span key={i} className="text-pneuma-gold underline decoration-white/20">{word} </span> : word + ' '
                   )}
                 </h1>

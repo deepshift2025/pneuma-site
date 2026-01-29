@@ -36,7 +36,7 @@ export const About: React.FC = () => {
             <div className="relative">
               <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-pneuma-light">
                 <img 
-                  src="https://images.unsplash.com/photo-1522071823991-b99c22303091?q=80&w=800&auto=format&fit=crop" 
+                  src="https://i.postimg.cc/Nf5gNBFq/IMG-0033-JPG.jpg" 
                   alt="Team collaboration" 
                   className="w-full h-full object-cover" 
                 />
@@ -56,7 +56,7 @@ export const About: React.FC = () => {
           <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row items-stretch">
             <div className="lg:w-2/5 relative min-h-[400px]">
               <img 
-                src="https://i.postimg.cc/1XvLB83c/mrs-tumusime.jpg" 
+                src="https://i.postimg.cc/1XvLB83c/mrs_tumusime.jpg" 
                 alt="Janet Tumusiime - Managing Director" 
                 className="absolute inset-0 w-full h-full object-cover object-top"
               />
@@ -132,7 +132,7 @@ export const About: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {LEADERSHIP.map((member, idx) => (
               <div key={idx} className="group flex flex-col items-center text-center">
                 <div className="relative mb-6 w-full aspect-square rounded-3xl overflow-hidden shadow-lg border-4 border-white">

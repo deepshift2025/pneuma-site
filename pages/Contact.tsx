@@ -39,7 +39,7 @@ export const Contact: React.FC = () => {
             <h2 className="text-pneuma-purple font-bold tracking-widest uppercase text-sm mb-4">Get in Touch</h2>
             <h1 className="text-5xl font-bold text-gray-900 font-serif mb-8 leading-tight">Professional Guidance for Your <span className="text-pneuma-purple">Global Journey</span></h1>
             <p className="text-gray-600 text-lg mb-12">
-              Our office is located in the Rubaga area of Kampala. Whether you are a job seeker or a potential international partner, we are ready to assist you.
+              Our office is located in Ntinda, Kampala. Whether you are a job seeker or a potential international partner, we are ready to assist you.
             </p>
 
             <div className="space-y-8">
@@ -62,7 +62,6 @@ export const Contact: React.FC = () => {
                   <div className="space-y-1">
                     <p className="text-gray-600 font-semibold">{COMPANY_INFO.phone1}</p>
                     <p className="text-gray-600 font-semibold">{COMPANY_INFO.phone2}</p>
-                    <p className="text-gray-600 font-semibold">{COMPANY_INFO.phone3}</p>
                   </div>
                 </div>
               </div>
@@ -214,7 +213,7 @@ export const Contact: React.FC = () => {
             </div>
             <h4 className="text-2xl font-bold mb-2 text-gray-900 font-serif">Main Office Location</h4>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Find us at <strong>Kigoowa Road, Rubaga (Ntinda area)</strong>. <br/>
+              Find us at <strong>Kigoowa Road, Ntinda, Kampala</strong>. <br/>
               P.O. BOX 273, Kampala.
             </p>
             <div className="flex flex-col gap-3">
@@ -244,7 +243,7 @@ export const Contact: React.FC = () => {
             <Shield size={14} /> Security Advisory
           </div>
           <p className="text-gray-500 text-xs max-w-2xl mx-auto">
-            Pneuma Nikos Group Ltd will never ask for payments via mobile money to individual numbers. All payments must be made at our official office in Rubaga or via our Diamond Trust Bank account. Report any fraudulent activity immediately to our hotline.
+            Pneuma Nikos Group Ltd will never ask for payments via mobile money to individual numbers. All payments must be made at our official office in Ntinda or via our Diamond Trust Bank account. Report any fraudulent activity immediately to our hotline.
           </p>
         </div>
       </section>

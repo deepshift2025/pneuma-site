@@ -153,7 +153,6 @@ export const Layout: React.FC<LayoutProps> = ({ children, currentView, setView }
                   <p className="text-xs text-gray-300 mb-1 uppercase tracking-wider">License Number</p>
                   <p className="text-pneuma-gold font-bold">{COMPANY_INFO.license}</p>
                   <p className="text-[10px] text-gray-400 mt-1">Regulated by the Ministry of Gender, Labour and Social Development</p>
-                  <p className="text-[10px] text-gray-400">Valid through: {COMPANY_INFO.licenseValidityEnd}</p>
                 </div>
                 <div className="flex items-center gap-2 text-pneuma-gold">
                    <ShieldCheck size={20} />

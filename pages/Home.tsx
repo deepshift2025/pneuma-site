@@ -171,7 +171,7 @@ export const Home: React.FC<HomeProps> = ({ setView, onApply }) => {
             <CheckCircle size={16} /> LICENSE: {COMPANY_INFO.license}
           </div>
           <div className="hidden md:flex items-center gap-2 text-pneuma-dark font-bold text-sm">
-            <CheckCircle size={16} /> VALIDITY: {COMPANY_INFO.licenseValidityStart} — {COMPANY_INFO.licenseValidityEnd}
+            <CheckCircle size={16} /> VALID SINCE: {COMPANY_INFO.licenseValidityStart}
           </div>
           <div className="flex items-center gap-2 text-pneuma-dark font-bold text-sm">
             <CheckCircle size={16} /> MINISTRY APPROVED
@@ -197,7 +197,7 @@ export const Home: React.FC<HomeProps> = ({ setView, onApply }) => {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 text-lg">Verified License E24050028</h4>
-                    <p className="text-gray-500 text-sm">Legally authorized recruitment operations valid through May 30, 2026.</p>
+                    <p className="text-gray-500 text-sm">Legally authorized recruitment operations under the Ministry of Gender.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 bg-gray-50 p-6 rounded-2xl border border-gray-100">

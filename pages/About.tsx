@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { COMPANY_INFO, LEADERSHIP, CORE_VALUES } from '../constants';
-import { Award, CheckCircle, Shield, Briefcase, Users, FileCheck, Target, Heart, Scale, Quote } from 'lucide-react';
+// Added Activity to the imports to fix the "Cannot find name 'Activity'" error on line 124.
+import { Award, CheckCircle, Shield, Briefcase, Users, FileCheck, Target, Heart, Scale, Quote, Activity } from 'lucide-react';
 import { ProcessTimeline } from '../components/ProcessTimeline';
 
 export const About: React.FC = () => {
@@ -50,43 +51,94 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Message from Managing Director */}
+      {/* Message from CEO & Director - Brian Tumusiime */}
+      <section className="py-24 bg-pneuma-dark text-white overflow-hidden relative">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-pneuma-gold rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="bg-white/5 backdrop-blur-md rounded-[3rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row items-stretch border border-white/10">
+            <div className="lg:w-2/5 relative min-h-[500px]">
+              <img 
+                src="https://i.postimg.cc/sDN2y1q7/Q4A9233-jpg.jpg" 
+                alt="Brian Tumusiime - Director / CEO" 
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-pneuma-dark/80 via-transparent to-transparent"></div>
+              <div className="absolute bottom-10 left-10">
+                <p className="text-3xl font-serif font-bold leading-tight">Brian Tumusiime</p>
+                <p className="text-pneuma-gold font-black uppercase tracking-widest text-xs">Director / CEO</p>
+              </div>
+            </div>
+            <div className="lg:w-3/5 p-12 lg:p-20 relative flex flex-col justify-center">
+              <Quote className="absolute top-10 right-10 text-white/5" size={140} />
+              <div className="relative z-10">
+                <h2 className="text-pneuma-gold font-bold tracking-widest uppercase text-xs mb-6 flex items-center gap-2">
+                   <Shield size={14} className="text-pneuma-gold" /> Leadership Message
+                </h2>
+                <h3 className="text-4xl font-bold text-white font-serif mb-10 leading-tight">A Vision for <span className="text-pneuma-gold">Human Capital Excellence</span></h3>
+                <div className="space-y-8 text-gray-300 text-lg font-light leading-relaxed">
+                  <p className="italic text-xl text-white font-medium">
+                    "My fellow Ugandans, Pneuma Nikos was founded on the principle that your hard work should be met with fairness and opportunity. We are not just a business; we are a vessel for transformation."
+                  </p>
+                  <p>
+                    "Our journey is one of trust. When you walk into our offices, you are entering a space of safety and absolute transparency. We have built deep international partnerships in Saudi Arabia and the UAE specifically to ensure that our candidates are placed with employers who respect their dignity and value their contribution."
+                  </p>
+                  <p>
+                    "Our goal is to ensure that every step of your journey abroad—from the first documentation to your final deployment—is paved with the professionalism you deserve. We are here to help you feed your universe by empowering your future."
+                  </p>
+                </div>
+                <div className="mt-12 flex items-center gap-6">
+                  <div className="h-px w-20 bg-pneuma-gold"></div>
+                  <div>
+                    <p className="font-serif italic text-white text-2xl">Brian Tumusiime</p>
+                    <p className="text-[10px] uppercase font-black tracking-widest text-pneuma-gold mt-1">Director / CEO, Pneuma Nikos Group</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Message from Operations Manager - Nantaba Janet M Tumusiime */}
       <section className="py-24 bg-gray-50 border-y border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row items-stretch">
+          <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row-reverse items-stretch">
             <div className="lg:w-2/5 relative min-h-[400px]">
               <img 
                 src="https://i.postimg.cc/1XvLB83c/mrs_tumusime.jpg" 
-                alt="Janet Tumusiime - Managing Director" 
+                alt="Nantaba Janet M Tumusiime - Operations Manager" 
                 className="absolute inset-0 w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-pneuma-purple/40 to-transparent"></div>
-              <div className="absolute bottom-10 left-10 text-white">
-                <p className="text-2xl font-serif font-bold leading-tight">Janet Tumusiime</p>
-                <p className="text-pneuma-gold font-black uppercase tracking-widest text-[10px]">Managing Director</p>
+              <div className="absolute bottom-10 right-10 text-white text-right">
+                <p className="text-2xl font-serif font-bold leading-tight">Nantaba Janet M Tumusiime</p>
+                <p className="text-pneuma-gold font-black uppercase tracking-widest text-[10px]">Operations Manager</p>
               </div>
             </div>
             <div className="lg:w-3/5 p-12 lg:p-20 relative flex flex-col justify-center">
               <Quote className="absolute top-10 right-10 text-pneuma-purple/5" size={120} />
               <div className="relative z-10">
                 <h2 className="text-pneuma-purple font-bold tracking-widest uppercase text-xs mb-6 flex items-center gap-2">
-                   <Heart size={14} className="text-pneuma-gold" /> A Message from Our MD
+                   <Activity size={14} className="text-pneuma-gold" /> Operational Excellence
                 </h2>
-                <h3 className="text-3xl font-bold text-gray-900 font-serif mb-8 leading-tight">Built on a Foundation of <span className="text-pneuma-purple">Trust and Dignity</span></h3>
+                <h3 className="text-3xl font-bold text-gray-900 font-serif mb-8 leading-tight">Precision in Every Step of Your <span className="text-pneuma-purple">Journey Abroad</span></h3>
                 <div className="space-y-6 text-gray-600 text-lg font-light leading-relaxed">
                   <p>
-                    "Welcome to Pneuma Nikos Group Ltd. Our journey began with a simple belief: that every Ugandan seeking international opportunities deserves a path characterized by safety, legal protection, and absolute respect."
+                    "Efficiency and integrity are the twin pillars of our recruitment operations. As your Operations Manager, I personally oversee the complex journey of your application to ensure it meets both Ugandan and international standards without compromise or delay."
                   </p>
                   <p>
-                    "We are more than just a recruitment agency; we are a family dedicated to 'Feeding the Universe' by empowering our brothers and sisters. Our commitment is to ensure that your move abroad is a gateway to financial stability and personal growth, backed by a licensed team that truly cares about your welfare from the moment you walk through our doors in Rubaga to your first day on the job in Saudi Arabia or Dubai."
-                  </p>
-                  <p>
-                    "Transparency is not just a policy for us—it is our promise. I invite you to join the Pneuma family, where your dreams are handled with the integrity they deserve."
+                    "Our mission is to turn your aspirations into reality through a refined, secure processing system. We work tirelessly to handle the logistical details—from documentation and medicals to legal vetting and travel—so that you can step into your new role with confidence and the full support of the Pneuma family behind you."
                   </p>
                 </div>
                 <div className="mt-12 flex items-center gap-4">
                   <div className="h-px w-12 bg-pneuma-gold"></div>
-                  <p className="font-serif italic text-pneuma-dark text-xl">Janet Tumusiime</p>
+                  <div>
+                    <p className="font-serif italic text-pneuma-dark text-xl">Nantaba Janet M Tumusiime</p>
+                    <p className="text-[10px] uppercase font-black tracking-widest text-pneuma-purple mt-1">Operations Manager</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -189,7 +241,7 @@ export const About: React.FC = () => {
                       <FileCheck size={24} />
                     </div>
                     <div>
-                      <p className="text-[10px] text-gray-500 uppercase font-black tracking-widest">EEMIS Registration</p>
+                      <p className="text-[10px] text-gray-400 uppercase font-black tracking-widest">EEMIS Registration</p>
                       <p className="text-xl font-bold text-white">{COMPANY_INFO.eemisRegistration}</p>
                     </div>
                   </div>
@@ -204,14 +256,10 @@ export const About: React.FC = () => {
                   <p className="text-gray-500 text-sm leading-relaxed mb-8">
                     We are proud to be part of the official labor migration system in Uganda, ensuring safe and regulated employment for all our candidates.
                   </p>
-                  <div className="grid grid-cols-2 gap-4 w-full">
+                  <div className="grid grid-cols-1 gap-4 w-full">
                     <div className="bg-gray-50 p-4 rounded-xl text-center">
                       <p className="text-pneuma-purple font-black text-xs uppercase">Valid Since</p>
                       <p className="text-gray-900 font-bold text-sm">May 2024</p>
-                    </div>
-                    <div className="bg-gray-50 p-4 rounded-xl text-center">
-                      <p className="text-pneuma-purple font-black text-xs uppercase">Expiry</p>
-                      <p className="text-gray-900 font-bold text-sm">May 2026</p>
                     </div>
                   </div>
                 </div>

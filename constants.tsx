@@ -8,14 +8,12 @@ export const COMPANY_INFO = {
   slogan: 'Feeding the Universe',
   license: 'E24050028',
   licenseValidityStart: 'May 31, 2024',
-  licenseValidityEnd: 'May 30, 2026',
   eemisRegistration: 'EEMIS-PN-2024-UG',
   phone1: '+256 702 772 221',
-  phone2: '+256 705 034 097',
-  phone3: '+256 701 613 895',
+  phone2: '+256 701 613 895',
   whatsapp: '256702772221',
   email: 'info@pneumanikosgroupltd.com',
-  address: 'P.O. BOX 273, Kigoowa Road, Kampala Rubaga (Ntinda area)',
+  address: 'P.O. BOX 273, Kigoowa Road, Ntinda, Kampala',
   bank: 'Diamond Trust Bank Uganda Ltd',
   social: {
     facebook: 'https://facebook.com/pneumanikosgroupltd',
@@ -121,16 +119,16 @@ export const CORE_VALUES = [
 
 export const LEADERSHIP = [
   {
-    name: 'Janet Tumusiime',
-    role: 'Managing Director',
-    image: 'https://i.postimg.cc/1XvLB83c/mrs_tumusime.jpg',
-    bio: 'Janet leads with compassion and over a decade of experience in HR, focusing on ethical recruitment and family-centric business values.'
-  },
-  {
     name: 'Brian Tumusiime',
     role: 'Director / CEO',
     image: 'https://i.postimg.cc/sDN2y1q7/Q4A9233-jpg.jpg',
     bio: 'Brian oversees international partnerships and strategic operations, ensuring Pneuma remains a trusted name globally.'
+  },
+  {
+    name: 'Nantaba Janet M Tumusiime',
+    role: 'Operations Manager',
+    image: 'https://i.postimg.cc/1XvLB83c/mrs_tumusime.jpg',
+    bio: 'Janet ensures the seamless execution of recruitment logistics, focusing on candidate processing efficiency and operational excellence.'
   },
   {
     name: 'Nakiwala Sanyu Stella',

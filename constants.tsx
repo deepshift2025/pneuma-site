@@ -81,7 +81,7 @@ export const RECRUITMENT_TIPS = [
     icon: <AlertTriangle className="w-5 h-5 text-red-500" />,
     items: [
       'Never pay un-receipted fees',
-      'Pneuma Nikos Group is ONLY in Rubaga',
+      'Pneuma Nikos Group is ONLY in Ntinda',
       'Check License E24050028 online',
       'Avoid agents asking for cash on streets',
       'Verify all visa details through EEMIS'
@@ -154,37 +154,62 @@ export const RECRUITMENT_PROCESS = [
   {
     step: 1,
     title: 'Apply',
-    description: 'Submit your comprehensive profiling form through our secure digital portal.',
+    description: 'Initial registration phase for potential candidates.',
+    details: [
+      'Apply with a valid passport.',
+      'In case a candidate has no passport, Pneuma Nikos can help with the paperwork to process one.'
+    ],
     icon: <FileText className="w-8 h-8" />
   },
   {
     step: 2,
     title: 'Contract',
-    description: 'Upon acceptance, candidates receive and sign their employment contracts.',
+    description: 'Official commitment between candidate and agency.',
+    details: [
+      'Contracts are issued ONLY to candidates that have successfully passed interviews.',
+      'Candidates sign the contracts upon payment of a commitment fee to the company.'
+    ],
     icon: <FileCheck className="w-8 h-8" />
   },
   {
     step: 3,
     title: 'Medicals',
-    description: 'Undergo thorough medical examinations as required by the destination country.',
+    description: 'Mandatory health screenings for legal deployment.',
+    details: [
+      'Saudi Arabia Program: Candidates must undergo a GCC medical exam.',
+      'UAE Program: Candidates must test for HIV, Syphilis, Hepatitis, and a mandatory Pregnancy test.'
+    ],
     icon: <Activity className="w-8 h-8" />
   },
   {
     step: 4,
-    title: 'Interpol Clearance',
-    description: 'Security vetting and background checks to obtain legal clearance for travel.',
+    title: 'Interpol',
+    description: 'Security vetting and background clearance.',
+    details: [
+      'Requirement: An up-to-date passport-size photo with both eyes and head clearly visible.',
+      'Processing Time: INTERPOL clearance typically takes 2 weeks.'
+    ],
     icon: <ShieldCheck className="w-8 h-8" />
   },
   {
     step: 5,
     title: 'Visa & Fingerprints',
-    description: 'Completion of biometric data capture and official visa processing.',
+    description: 'Deployment authorization and biometric capturing.',
+    details: [
+      'Saudi Arabia: Eligible candidates proceed to the fingerprint center regulated by the Saudi Embassy after passing medicals.',
+      'UAE: Visas are applied for after successfully passing medicals and acquiring an Interpol clearance attested by the UAE Embassy.'
+    ],
     icon: <Fingerprint className="w-8 h-8" />
   },
   {
     step: 6,
     title: 'Travel',
-    description: 'Pre-departure orientation and safe deployment to your new international career.',
+    description: 'Final deployment and checklist verification.',
+    details: [
+      'Visa must be issued.',
+      'Airticket must be issued.',
+      'Valid Yellow Fever card is mandatory at point of travel.'
+    ],
     icon: <Plane className="w-8 h-8" />
   }
 ];

@@ -1,9 +1,15 @@
 
 import React from 'react';
-import { COUNTRY_GUIDES, RECRUITMENT_TIPS, COMPANY_INFO } from '../constants';
-import { Globe, BookOpen, CheckCircle, Info, ShieldAlert, FileText, ArrowRight, Lightbulb } from 'lucide-react';
+import { COMPANY_INFO } from '../constants';
+import { CountryGuide, RecruitmentTip } from '../types';
+import { Globe, BookOpen, CheckCircle, Info, ShieldAlert, ArrowRight } from 'lucide-react';
 
-export const Resources: React.FC = () => {
+interface ResourcesProps {
+  countryGuides: CountryGuide[];
+  recruitmentTips: RecruitmentTip[];
+}
+
+export const Resources: React.FC<ResourcesProps> = ({ countryGuides, recruitmentTips }) => {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
@@ -36,7 +42,7 @@ export const Resources: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {COUNTRY_GUIDES.map((guide, idx) => (
+            {countryGuides.map((guide, idx) => (
               <div key={idx} className="bg-gray-50 rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all group">
                 <div className="aspect-video relative overflow-hidden">
                   <img src={guide.image} alt={guide.country} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -86,7 +92,7 @@ export const Resources: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {RECRUITMENT_TIPS.map((tip, idx) => (
+            {recruitmentTips.map((tip, idx) => (
               <div key={idx} className={`bg-white p-10 rounded-3xl shadow-sm border ${tip.title.includes('Anti-Fraud') ? 'border-red-100 ring-2 ring-red-50' : 'border-gray-100'}`}>
                 <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 ${tip.title.includes('Anti-Fraud') ? 'bg-red-100 text-red-600' : 'bg-pneuma-light text-pneuma-purple'}`}>
                   {tip.icon}
@@ -157,41 +163,6 @@ export const Resources: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog / News Section Placeholder */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div>
-              <h2 className="text-pneuma-purple font-bold tracking-widest uppercase text-sm mb-4">Stay Informed</h2>
-              <h3 className="text-4xl font-bold text-gray-900 font-serif">Latest Updates & News</h3>
-            </div>
-            <button className="text-pneuma-purple font-bold flex items-center gap-2 hover:underline">
-              View All Posts <ArrowRight size={20} />
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <div className="aspect-video bg-gray-200">
-                   <img src={`https://picsum.photos/seed/pneuma-news-${i}/600/400`} alt="News" className="w-full h-full object-cover" />
-                </div>
-                <div className="p-8">
-                  <div className="text-xs text-pneuma-gold font-bold uppercase mb-4 tracking-widest">Company Update • May 2024</div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-4 leading-tight">New Recruitment Drive for {i === 1 ? 'Dubai Cleaners' : i === 2 ? 'Saudi Arabia Professionals' : 'Middle East Domestic Staff'}</h4>
-                  <p className="text-gray-500 text-sm mb-6 line-clamp-3">
-                    We are excited to announce our newest partnership with major employers in the Gulf region. Applications are now open for qualified candidates.
-                  </p>
-                  <button className="text-pneuma-purple text-sm font-bold flex items-center gap-2 group">
-                    Read Story <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

@@ -1,40 +1,48 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { TESTIMONIALS } from '../constants';
 import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 export const TestimonialCarousel: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      handleNext();
-    }, 7000);
-    return () => clearInterval(timer);
-  }, [current]);
-
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrent((prev) => (prev + 1) % TESTIMONIALS.length);
-    setTimeout(() => setIsAnimating(false), 500);
-  };
+    setTimeout(() => setIsAnimating(false), 600);
+  }, [isAnimating]);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrent((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
-    setTimeout(() => setIsAnimating(false), 500);
-  };
+    setTimeout(() => setIsAnimating(false), 600);
+  }, [isAnimating]);
+
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = setInterval(() => {
+      handleNext();
+    }, 5000); // 5 seconds interval for a more active feel
+
+    return () => clearInterval(timer);
+  }, [handleNext, isPaused]);
 
   return (
-    <div className="relative group">
+    <div 
+      className="relative group"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       {/* Decorative background element */}
       <div className="absolute -top-10 -left-10 w-32 h-32 bg-pneuma-gold/5 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-pneuma-purple/5 rounded-full blur-3xl"></div>
 
-      <div className="relative overflow-hidden bg-white rounded-[3rem] shadow-2xl border border-gray-100 p-8 sm:p-16">
+      <div className="relative overflow-hidden bg-white rounded-[3rem] shadow-2xl border border-gray-100 p-8 sm:p-16 min-h-[420px] flex flex-col justify-center">
         <Quote className="absolute top-8 right-12 text-pneuma-purple/5" size={120} />
         
         <div className="relative z-10">
@@ -45,8 +53,8 @@ export const TestimonialCarousel: React.FC = () => {
           </div>
 
           <div 
-            className={`transition-all duration-500 ease-in-out ${
-              isAnimating ? 'opacity-0 translate-x-4' : 'opacity-100 translate-x-0'
+            className={`transition-all duration-700 ease-in-out ${
+              isAnimating ? 'opacity-0 translate-x-8 blur-sm' : 'opacity-100 translate-x-0 blur-0'
             }`}
           >
             <p className="text-xl sm:text-2xl text-gray-700 italic font-medium leading-relaxed mb-10">
@@ -54,7 +62,7 @@ export const TestimonialCarousel: React.FC = () => {
             </p>
 
             <div className="flex items-center gap-5">
-              <div className="w-16 h-16 bg-pneuma-purple rounded-2xl flex items-center justify-center text-white font-serif text-2xl font-bold shadow-lg shadow-pneuma-purple/20">
+              <div className="w-16 h-16 bg-pneuma-purple rounded-2xl flex items-center justify-center text-white font-serif text-2xl font-bold shadow-lg shadow-pneuma-purple/20 ring-4 ring-pneuma-light">
                 {TESTIMONIALS[current].name[0]}
               </div>
               <div>
@@ -73,14 +81,14 @@ export const TestimonialCarousel: React.FC = () => {
         <div className="absolute bottom-8 right-12 flex items-center gap-3">
           <button 
             onClick={handlePrev}
-            className="p-3 rounded-xl border border-gray-100 text-gray-400 hover:bg-pneuma-purple hover:text-white hover:border-pneuma-purple transition-all"
+            className="p-3 rounded-xl border border-gray-100 text-gray-400 hover:bg-pneuma-purple hover:text-white hover:border-pneuma-purple transition-all shadow-sm hover:shadow-md"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={20} />
           </button>
           <button 
             onClick={handleNext}
-            className="p-3 rounded-xl border border-gray-100 text-gray-400 hover:bg-pneuma-purple hover:text-white hover:border-pneuma-purple transition-all"
+            className="p-3 rounded-xl border border-gray-100 text-gray-400 hover:bg-pneuma-purple hover:text-white hover:border-pneuma-purple transition-all shadow-sm hover:shadow-md"
             aria-label="Next testimonial"
           >
             <ChevronRight size={20} />
@@ -96,17 +104,38 @@ export const TestimonialCarousel: React.FC = () => {
                 if (!isAnimating) {
                   setIsAnimating(true);
                   setCurrent(i);
-                  setTimeout(() => setIsAnimating(false), 500);
+                  setTimeout(() => setIsAnimating(false), 600);
                 }
               }}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === current ? 'w-8 bg-pneuma-gold' : 'w-2 bg-gray-200 hover:bg-gray-300'
+              className={`h-1.5 rounded-full transition-all duration-500 ${
+                i === current ? 'w-10 bg-pneuma-gold shadow-sm' : 'w-2 bg-gray-200 hover:bg-gray-300'
               }`}
               aria-label={`Go to testimonial ${i + 1}`}
             />
           ))}
         </div>
+
+        {/* Progress bar (Visual auto-play indicator) */}
+        {!isPaused && (
+          <div className="absolute bottom-0 left-0 h-1 bg-pneuma-gold/20 w-full overflow-hidden">
+            <div 
+              key={current}
+              className="h-full bg-pneuma-gold animate-progress"
+              style={{ animationDuration: '5000ms' }}
+            ></div>
+          </div>
+        )}
       </div>
+
+      <style>{`
+        @keyframes progress {
+          0% { width: 0%; }
+          100% { width: 100%; }
+        }
+        .animate-progress {
+          animation: progress linear forwards;
+        }
+      `}</style>
     </div>
   );
 };

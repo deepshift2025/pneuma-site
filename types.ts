@@ -18,6 +18,25 @@ export interface Job {
   deadline?: string;
 }
 
+export interface CountryGuide {
+  country: Location;
+  image: string;
+  highlights: string[];
+  culture: string;
+  rights: string;
+}
+
+export interface RecruitmentTip {
+  title: string;
+  icon: any;
+  items: string[];
+}
+
+export interface GalleryImage {
+  url: string;
+  title: string;
+}
+
 export interface ApplicationFormData {
   fullName: string;
   email: string;
@@ -53,4 +72,4 @@ export interface ApplicationFormData {
   declarationConfirmed: boolean;
 }
 
-export type View = 'home' | 'about' | 'jobs' | 'process' | 'contact' | 'portal' | 'resources' | 'legal';
+export type View = 'home' | 'about' | 'jobs' | 'process' | 'contact' | 'portal' | 'resources' | 'legal' | 'admin';

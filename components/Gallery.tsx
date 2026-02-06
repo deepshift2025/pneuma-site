@@ -1,23 +1,27 @@
 
-import React, { useState, useEffect, useRef } from 'react';
-import { GALLERY_IMAGES } from '../constants';
+import React, { useState, useEffect } from 'react';
+import { GalleryImage } from '../types';
 import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
 
-export const Gallery: React.FC = () => {
+interface GalleryProps {
+  images: GalleryImage[];
+}
+
+export const Gallery: React.FC<GalleryProps> = ({ images }) => {
   const [fullscreenIdx, setFullscreenIdx] = useState<number | null>(null);
   
-  // Infinite scroll logic (cloning images for seamless marquee)
-  const infiniteImages = [...GALLERY_IMAGES, ...GALLERY_IMAGES, ...GALLERY_IMAGES];
+  // Infinite scroll logic
+  const infiniteImages = [...images, ...images, ...images];
 
   const handleNext = () => {
     if (fullscreenIdx !== null) {
-      setFullscreenIdx((fullscreenIdx + 1) % GALLERY_IMAGES.length);
+      setFullscreenIdx((fullscreenIdx + 1) % images.length);
     }
   };
 
   const handlePrev = () => {
     if (fullscreenIdx !== null) {
-      setFullscreenIdx((fullscreenIdx - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length);
+      setFullscreenIdx((fullscreenIdx - 1 + images.length) % images.length);
     }
   };
 
@@ -30,7 +34,7 @@ export const Gallery: React.FC = () => {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [fullscreenIdx]);
+  }, [fullscreenIdx, images.length]);
 
   return (
     <section className="py-24 bg-white overflow-hidden relative border-t border-gray-50">
@@ -41,7 +45,6 @@ export const Gallery: React.FC = () => {
       </div>
 
       <div className="relative group/marquee">
-        {/* Carousel Container */}
         <div 
           className="flex gap-4 animate-marquee group-hover/marquee:pause"
           style={{ width: 'max-content' }}
@@ -50,7 +53,7 @@ export const Gallery: React.FC = () => {
             <div 
               key={idx} 
               className="relative w-[300px] h-[400px] sm:w-[400px] sm:h-[500px] shrink-0 rounded-[2.5rem] overflow-hidden shadow-2xl cursor-pointer select-none group/img bg-gray-100 border border-gray-100"
-              onDoubleClick={() => setFullscreenIdx(idx % GALLERY_IMAGES.length)}
+              onDoubleClick={() => setFullscreenIdx(idx % images.length)}
             >
               <img 
                 src={img.url} 
@@ -69,16 +72,15 @@ export const Gallery: React.FC = () => {
         </div>
       </div>
 
-      {/* Fullscreen Lightbox Modal */}
       {fullscreenIdx !== null && (
         <div className="fixed inset-0 z-[1000] bg-pneuma-dark/98 backdrop-blur-2xl flex flex-col animate-in fade-in duration-300">
           <div className="flex justify-between items-center p-6 text-white border-b border-white/5">
             <div className="flex flex-col">
               <h4 className="text-2xl font-serif font-bold text-pneuma-gold">
-                {GALLERY_IMAGES[fullscreenIdx].title}
+                {images[fullscreenIdx]?.title}
               </h4>
               <p className="text-xs text-gray-400 uppercase tracking-widest font-black">
-                Image {fullscreenIdx + 1} of {GALLERY_IMAGES.length}
+                Image {fullscreenIdx + 1} of {images.length}
               </p>
             </div>
             <button 
@@ -90,7 +92,6 @@ export const Gallery: React.FC = () => {
           </div>
 
           <div className="flex-grow relative flex items-center justify-center overflow-hidden">
-            {/* Nav Arrows */}
             <button 
               onClick={handlePrev}
               className="absolute left-8 p-5 bg-white/5 hover:bg-pneuma-gold hover:text-pneuma-dark rounded-full text-white transition-all group z-50 backdrop-blur-md"
@@ -104,9 +105,8 @@ export const Gallery: React.FC = () => {
               <ChevronRight size={48} className="group-hover:translate-x-1 transition-transform" />
             </button>
 
-            {/* Scrollable Gallery Content */}
             <div className="w-full h-full flex items-center justify-center overflow-x-auto no-scrollbar snap-x snap-mandatory px-4">
-              {GALLERY_IMAGES.map((img, i) => (
+              {images.map((img, i) => (
                 <div 
                   key={i} 
                   className={`min-w-full h-full flex items-center justify-center snap-center p-8 transition-all duration-500 ${i === fullscreenIdx ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none absolute'}`}
@@ -119,16 +119,6 @@ export const Gallery: React.FC = () => {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="p-10 flex justify-center gap-4 overflow-x-auto no-scrollbar bg-pneuma-dark/50 border-t border-white/5">
-            {GALLERY_IMAGES.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setFullscreenIdx(i)}
-                className={`h-1.5 transition-all rounded-full ${i === fullscreenIdx ? 'w-16 bg-pneuma-gold' : 'w-6 bg-white/10 hover:bg-white/30'}`}
-              />
-            ))}
           </div>
         </div>
       )}

@@ -8,26 +8,36 @@ import { Portal } from './pages/Portal';
 import { Contact } from './pages/Contact';
 import { Resources } from './pages/Resources';
 import { Legal } from './pages/Legal';
-import { View, Job } from './types';
+import { AdminDashboard } from './pages/AdminDashboard';
+import { View, Job, GalleryImage, CountryGuide, RecruitmentTip } from './types';
 import { ProcessTimeline } from './components/ProcessTimeline';
 import { ApplicationModal } from './components/ApplicationModal';
 import { AIAssistant } from './components/AIAssistant';
 import { WhatsAppButton } from './components/WhatsAppButton';
+import { MOCK_JOBS, GALLERY_IMAGES, COUNTRY_GUIDES, RECRUITMENT_TIPS } from './constants';
 
 const App: React.FC = () => {
   const [currentView, setView] = useState<View>('home');
+  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
+  
+  // Manageable State
+  const [jobs, setJobs] = useState<Job[]>(MOCK_JOBS);
+  const [galleryImages, setGalleryImages] = useState<GalleryImage[]>(GALLERY_IMAGES);
+  const [countryGuides, setCountryGuides] = useState<CountryGuide[]>(COUNTRY_GUIDES);
+  const [recruitmentTips, setRecruitmentTips] = useState<RecruitmentTip[]>(RECRUITMENT_TIPS);
+  
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
 
   const renderView = () => {
     switch (currentView) {
       case 'home':
-        return <Home setView={setView} onApply={setSelectedJob} />;
+        return <Home setView={setView} onApply={setSelectedJob} jobs={jobs} testimonials={[]} galleryImages={galleryImages} />;
       case 'about':
         return <About />;
       case 'jobs':
-        return <Jobs onApply={setSelectedJob} />;
+        return <Jobs onApply={setSelectedJob} jobs={jobs} />;
       case 'resources':
-        return <Resources />;
+        return <Resources countryGuides={countryGuides} recruitmentTips={recruitmentTips} />;
       case 'process':
         return <ProcessTimeline />;
       case 'portal':
@@ -36,8 +46,24 @@ const App: React.FC = () => {
         return <Contact />;
       case 'legal':
         return <Legal />;
+      case 'admin':
+        return (
+          <AdminDashboard 
+            isLoggedIn={isAdminLoggedIn} 
+            setIsLoggedIn={setIsAdminLoggedIn} 
+            jobs={jobs} 
+            setJobs={setJobs}
+            galleryImages={galleryImages}
+            setGalleryImages={setGalleryImages}
+            countryGuides={countryGuides}
+            setCountryGuides={setCountryGuides}
+            recruitmentTips={recruitmentTips}
+            setRecruitmentTips={setRecruitmentTips}
+            onClose={() => setView('home')}
+          />
+        );
       default:
-        return <Home setView={setView} onApply={setSelectedJob} />;
+        return <Home setView={setView} onApply={setSelectedJob} jobs={jobs} testimonials={[]} galleryImages={galleryImages} />;
     }
   };
 

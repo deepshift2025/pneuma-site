@@ -1,18 +1,18 @@
 
 import React, { useState } from 'react';
-import { MOCK_JOBS } from '../constants';
 import { Job, Location } from '../types';
-import { Search, MapPin, Calendar, Users, Briefcase, Filter, Star, Clock, FileText, CheckCircle } from 'lucide-react';
+import { Search, MapPin, Calendar, Users, Briefcase, Filter, Clock, FileText, CheckCircle } from 'lucide-react';
 
 interface JobsProps {
   onApply: (job: Job) => void;
+  jobs: Job[];
 }
 
-export const Jobs: React.FC<JobsProps> = ({ onApply }) => {
+export const Jobs: React.FC<JobsProps> = ({ onApply, jobs }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedLocation, setSelectedLocation] = useState<Location | 'All'>('All');
 
-  const filteredJobs = MOCK_JOBS.filter(job => {
+  const filteredJobs = jobs.filter(job => {
     const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                          job.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesLocation = selectedLocation === 'All' || job.location === selectedLocation;
@@ -149,9 +149,6 @@ export const Jobs: React.FC<JobsProps> = ({ onApply }) => {
                         className="bg-pneuma-purple text-white px-10 py-4 rounded-xl font-bold hover:bg-pneuma-dark transition-all shadow-lg shadow-pneuma-purple/20"
                       >
                         Apply Now
-                      </button>
-                      <button className="border border-gray-200 text-gray-600 px-10 py-4 rounded-xl font-bold hover:bg-gray-50 transition-all">
-                        Inquire More
                       </button>
                     </div>
                   </div>

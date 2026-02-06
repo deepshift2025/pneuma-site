@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { MOCK_JOBS, COMPANY_INFO, TESTIMONIALS } from '../constants';
-import { View, Job } from '../types';
+import { COMPANY_INFO } from '../constants';
+import { View, Job, GalleryImage } from '../types';
 import { Globe, Shield, Users, ArrowRight, Briefcase, Star, Quote, CheckCircle, Award, Clock, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ProcessTimeline } from '../components/ProcessTimeline';
 import { Gallery } from '../components/Gallery';
@@ -10,6 +10,9 @@ import { TestimonialCarousel } from '../components/TestimonialCarousel';
 interface HomeProps {
   setView: (view: View) => void;
   onApply: (job: Job) => void;
+  jobs: Job[];
+  galleryImages: GalleryImage[];
+  testimonials: any[];
 }
 
 const HERO_SLIDES = [
@@ -55,7 +58,7 @@ const HERO_SLIDES = [
   }
 ];
 
-export const Home: React.FC<HomeProps> = ({ setView, onApply }) => {
+export const Home: React.FC<HomeProps> = ({ setView, onApply, jobs, galleryImages }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -247,7 +250,7 @@ export const Home: React.FC<HomeProps> = ({ setView, onApply }) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {MOCK_JOBS.slice(0, 3).map((job) => (
+            {jobs.slice(0, 3).map((job) => (
               <div key={job.id} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-all group relative flex flex-col h-full">
                 <div className="absolute top-0 right-0 bg-pneuma-gold px-3 py-1 rounded-bl-xl text-[10px] font-bold text-pneuma-dark uppercase">
                   {job.location}
@@ -357,7 +360,7 @@ export const Home: React.FC<HomeProps> = ({ setView, onApply }) => {
       </section>
 
       {/* 5.1 Gallery Section */}
-      <Gallery />
+      <Gallery images={galleryImages} />
     </div>
   );
 };

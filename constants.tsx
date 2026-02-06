@@ -127,7 +127,7 @@ export const LEADERSHIP = [
   {
     name: 'Nantaba Janet M Tumusiime',
     role: 'Operations Manager',
-    image: 'https://i.postimg.cc/1XvLB83c/mrs_tumusime.jpg',
+    image: 'https://i.postimg.cc/Kvb2dPBH/janet-jpg.jpg',
     bio: 'Janet ensures the seamless execution of recruitment logistics, focusing on candidate processing efficiency and operational excellence.'
   },
   {
@@ -154,63 +154,63 @@ export const RECRUITMENT_PROCESS = [
   {
     step: 1,
     title: 'Apply',
-    description: 'Initial registration phase for potential candidates.',
+    description: 'Submit your profile and passport.',
+    icon: <FileText className="w-8 h-8" />,
     details: [
       'Apply with a valid passport.',
-      'In case a candidate has no passport, Pneuma Nikos can help with the paperwork to process one.'
-    ],
-    icon: <FileText className="w-8 h-8" />
+      'In case a candidate has no passport, we can help with paperwork to process a passport.'
+    ]
   },
   {
     step: 2,
     title: 'Contract',
-    description: 'Official commitment between candidate and agency.',
+    description: 'Official job offer and commitment.',
+    icon: <FileCheck className="w-8 h-8" />,
     details: [
-      'Contracts are issued ONLY to candidates that have successfully passed interviews.',
-      'Candidates sign the contracts upon payment of a commitment fee to the company.'
-    ],
-    icon: <FileCheck className="w-8 h-8" />
+      'Contracts are issued ONLY to candidates that have passed interviews.',
+      'Candidates sign the contracts upon payment of commitment fee to the company.'
+    ]
   },
   {
     step: 3,
     title: 'Medicals',
-    description: 'Mandatory health screenings for legal deployment.',
+    description: 'Mandatory health clearance.',
+    icon: <Activity className="w-8 h-8" />,
     details: [
-      'Saudi Arabia Program: Candidates must undergo a GCC medical exam.',
+      'Saudi Arabia Program: Candidates undergo GCC medical examinations.',
       'UAE Program: Candidates must test for HIV, Syphilis, Hepatitis, and a mandatory Pregnancy test.'
-    ],
-    icon: <Activity className="w-8 h-8" />
+    ]
   },
   {
     step: 4,
     title: 'Interpol',
-    description: 'Security vetting and background clearance.',
+    description: 'Legal vetting and security clearance.',
+    icon: <ShieldCheck className="w-8 h-8" />,
     details: [
-      'Requirement: An up-to-date passport-size photo with both eyes and head clearly visible.',
-      'Processing Time: INTERPOL clearance typically takes 2 weeks.'
-    ],
-    icon: <ShieldCheck className="w-8 h-8" />
+      'Requirement: Up-to-date passport size photo with both eyes and head clearly seen.',
+      'Processing Time: INTERPOL clearance takes approximately 2 weeks.'
+    ]
   },
   {
     step: 5,
     title: 'Visa & Fingerprints',
-    description: 'Deployment authorization and biometric capturing.',
+    description: 'Embassy and biometric processing.',
+    icon: <Fingerprint className="w-8 h-8" />,
     details: [
-      'Saudi Arabia: Eligible candidates proceed to the fingerprint center regulated by the Saudi Embassy after passing medicals.',
-      'UAE: Visas are applied for after successfully passing medicals and acquiring an Interpol clearance attested by the UAE Embassy.'
-    ],
-    icon: <Fingerprint className="w-8 h-8" />
+      'Saudi Arabia: Eligible candidates proceed to the finger print center regulated by the Kingdom of Saudi Arabia embassy after passing medicals.',
+      'UAE: Visas are applied for after passing medicals and acquiring an Interpol clearance attested by the UAE embassy.'
+    ]
   },
   {
     step: 6,
     title: 'Travel',
-    description: 'Final deployment and checklist verification.',
+    description: 'Final orientation and departure.',
+    icon: <Plane className="w-8 h-8" />,
     details: [
-      'Visa must be issued.',
-      'Airticket must be issued.',
-      'Valid Yellow Fever card is mandatory at point of travel.'
-    ],
-    icon: <Plane className="w-8 h-8" />
+      'Official Visa must be issued.',
+      'Flight airticket must be issued.',
+      'Valid Yellow Fever card is mandatory for travel.'
+    ]
   }
 ];
 

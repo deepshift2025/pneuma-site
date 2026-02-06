@@ -2,7 +2,7 @@
 import React from 'react';
 import { View } from '../types';
 import { COMPANY_INFO } from '../constants';
-import { Menu, X, Phone, Mail, MapPin, Award, Facebook, Instagram, ShieldCheck, AlertTriangle } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, Award, Facebook, Instagram, ShieldCheck, Lock } from 'lucide-react';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -183,8 +183,14 @@ export const Layout: React.FC<LayoutProps> = ({ children, currentView, setView }
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-8 text-center text-gray-500 text-xs">
+          <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-500 text-xs">
             <p>&copy; {new Date().getFullYear()} Pneuma Nikos Group Ltd. All rights reserved.</p>
+            <button 
+              onClick={() => setView('admin')}
+              className="flex items-center gap-1.5 opacity-40 hover:opacity-100 transition-all font-bold uppercase tracking-widest"
+            >
+              <Lock size={12} /> Admin Dashboard
+            </button>
           </div>
         </div>
       </footer>

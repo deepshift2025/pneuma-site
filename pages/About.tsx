@@ -3,7 +3,6 @@ import React from 'react';
 import { COMPANY_INFO, LEADERSHIP, CORE_VALUES } from '../constants';
 // Added Activity to the imports to fix the "Cannot find name 'Activity'" error on line 124.
 import { Award, CheckCircle, Shield, Briefcase, Users, FileCheck, Target, Heart, Scale, Quote, Activity } from 'lucide-react';
-import { ProcessTimeline } from '../components/ProcessTimeline';
 
 export const About: React.FC = () => {
   return (
@@ -108,7 +107,7 @@ export const About: React.FC = () => {
           <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row-reverse items-stretch">
             <div className="lg:w-2/5 relative min-h-[400px]">
               <img 
-                src="https://i.postimg.cc/1XvLB83c/mrs_tumusime.jpg" 
+                src="https://i.postimg.cc/Kvb2dPBH/janet-jpg.jpg" 
                 alt="Nantaba Janet M Tumusiime - Operations Manager" 
                 className="absolute inset-0 w-full h-full object-cover object-top"
               />
@@ -204,11 +203,6 @@ export const About: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* 4. The Process */}
-      <div className="bg-gray-50">
-        <ProcessTimeline />
-      </div>
 
       {/* 5. Regulatory Compliance */}
       <section className="py-24 bg-white">
